@@ -33,4 +33,13 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
+          echo test, and deploy your project.>>text.txt
+          
+          
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: bot@glulearning.com
+          message: "Version: ${{ env.APP_VERSION }}"
+          add: text.txt
