@@ -52,6 +52,6 @@ jobs:
     steps:
       - env:
           OUTPUT1: ${{needs.job1.outputs.out1}}
-        run: echo "$OUTPUT1"
+        run: echo ${{needs.job1.outputs.out1}}
     
     
